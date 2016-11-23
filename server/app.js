@@ -11,13 +11,12 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-const User = require('./models/user')
+const User = require('./models/models.api.users')
 const session = require('express-session')
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE)
 
-var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
@@ -52,8 +51,7 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/api/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

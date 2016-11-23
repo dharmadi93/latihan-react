@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/models.api.users')
 const jwt = require('jsonwebtoken')
 const passport = require('passport')
 
