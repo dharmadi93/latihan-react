@@ -6,8 +6,12 @@ const Post = new Schema({
         type: Schema.ObjectId,
         ref: 'User'
     },
-    postId: {
+    PostId: {
         type: Number
+    },
+    title: {
+        type: String,
+        required: true
     },
     comments: [
         {
@@ -25,10 +29,10 @@ const Post = new Schema({
     timestamps: true
 })
 
-Question.pre('find', function (next) {
+Post.pre('find', function (next) {
     this.populate('createdBy', 'username')
     this.populate('comments.$.createdBy', 'username')
     next()
 })
 
-module.exports = mongoose.model('Question', Question)
+module.exports = mongoose.model('Post', Post)
