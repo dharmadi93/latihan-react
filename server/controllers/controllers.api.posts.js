@@ -21,7 +21,7 @@ module.exports = {
     addPost: function (req, res) {
         const post = {
             createdBy: req.body.user,
-            postId: Date.now(),
+            PostId: Date.now(),
             title: req.body.title,
             comments: []
         }
