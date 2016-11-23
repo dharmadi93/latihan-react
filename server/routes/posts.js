@@ -8,5 +8,6 @@ router.delete('/', postController.deletePostByPostId)
 router.delete('/comment', postController.deleteComment)
 router.put('/post', postController.updatePost)
 router.put('/comment', postController.addComment)
+router.put('/comment/edit', postController.updateComment)
 
 module.exports = router;

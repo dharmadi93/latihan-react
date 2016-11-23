@@ -118,12 +118,12 @@ module.exports = {
         })
     },
 
-    updateAnswer: function (req, res) {
+    updateComment: function (req, res) {
         Post.findOneAndUpdate({
-            // PostId: req.params.PostId,
-            'answers._id': req.params.id
+            // PostId: req.body.PostId,
+            'comments._id': req.body.id
         }, {
-            'answers.$.answer': req.body.answer
+            'comments.$.content': req.body.content
         }, {
             new: true,
             upsert: false
