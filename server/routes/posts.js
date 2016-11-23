@@ -5,6 +5,7 @@ const postController = require('../controllers/controllers.api.posts')
 router.get('/', postController.getPosts)
 router.post('/', postController.addPost)
 router.delete('/', postController.deletePostByPostId)
-router.put('/', postController.updatePost)
+router.put('/post', postController.updatePost)
+router.put('/comment', postController.addComment)
 
 module.exports = router;
