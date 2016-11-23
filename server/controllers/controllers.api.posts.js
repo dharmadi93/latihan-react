@@ -50,7 +50,7 @@ module.exports = {
 
     updatePost: function (req, res) {
         Post.findOneAndUpdate({
-            PostId: req.params.PostId
+            PostId: req.body.PostId
         }, {
             title: req.body.title
         }, {
