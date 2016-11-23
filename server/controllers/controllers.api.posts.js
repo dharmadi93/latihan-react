@@ -81,13 +81,13 @@ module.exports = {
         })
     },
 
-    deleteAnswer: function (req, res) {
+    deleteComment: function (req, res) {
         Post.findOneAndUpdate({
-            PostId: req.params.PostId
+            PostId: req.body.PostId
         }, {
             $pull: {
-                answers: {
-                    _id: req.params.id
+                comments: {
+                    _id: req.body.id
                 }
             }
         }, {
