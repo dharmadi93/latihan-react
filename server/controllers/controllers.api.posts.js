@@ -99,7 +99,7 @@ module.exports = {
         })
     },
 
-    viewAnswer: function (req, res) {
+    viewComment: function (req, res) {
         console.log("q", req.params.PostId)
         console.log("a", req.params.id)
         Post.findOne({
